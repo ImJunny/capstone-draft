@@ -18,36 +18,41 @@ const categories = [
   { name: "Other" },
 ];
 
-const jobSuggestions: TypePost[] = [
+export const jobSuggestions: TypePost[] = [
   {
     id: 1,
     title: "Lawn Mowing",
     description: "This is a description of the lawn mowing job.",
     rate: 80,
+    tags: ["home", "local"],
   },
   {
     id: 2,
-    title: "Lorem Ipsum",
+    title: "Building Meural",
     description: "This is a description of lorem ipsum.",
     rate: 35,
+    tags: ["art", "local", "ammenities"],
   },
   {
     id: 3,
-    title: "Lorem Ipsum",
+    title: "Simple Static Website Needed",
     description: "This is a description of lorem ipsum.",
     rate: 24,
+    tags: ["tech", "remote"],
   },
   {
     id: 4,
     title: "Lorem Ipsum",
     description: "This is a description of lorem ipsum.",
     rate: 120,
+    tags: ["tech", "remote"],
   },
   {
     id: 5,
     title: "Lorem Ipsum",
     description: "This is a description of lorem ipsum.",
     rate: 60,
+    tags: ["tech", "remote"],
   },
 ];
 

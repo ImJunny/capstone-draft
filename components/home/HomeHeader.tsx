@@ -18,9 +18,9 @@ export default function HomeHeader() {
         Hustle
       </Text>
 
-      <Link href="/messages" asChild>
+      <Link href="/home" asChild>
         <TouchableOpacity>
-          <Ionicons name="chatbox-ellipses-outline" size={28} />
+          <Ionicons name="filter" size={28} />
         </TouchableOpacity>
       </Link>
     </HeaderWrapper>

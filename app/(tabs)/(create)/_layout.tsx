@@ -1,8 +1,5 @@
-import HeaderWrapper from "@/components/ui/HeaderWrapper";
-import Text from "@/components/ui/Text";
-import HomeHeader from "@/components/home/HomeHeader";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { Link, Stack } from "expo-router";
+import { Stack } from "expo-router";
+import CreateHeader from "@/components/create/CreateHeader";
 
 export default function StackLayout() {
   return (
@@ -10,7 +7,7 @@ export default function StackLayout() {
       <Stack.Screen
         name="create"
         options={{
-          header: () => <HomeHeader />,
+          header: () => <CreateHeader />,
         }}
       />
     </Stack>

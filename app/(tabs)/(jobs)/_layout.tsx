@@ -3,6 +3,7 @@ import Text from "@/components/ui/Text";
 import HomeHeader from "@/components/home/HomeHeader";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Link, Stack } from "expo-router";
+import JobsHeader from "@/components/jobs/JobsHeader";
 
 export default function StackLayout() {
   return (
@@ -10,7 +11,7 @@ export default function StackLayout() {
       <Stack.Screen
         name="jobs"
         options={{
-          header: () => <HomeHeader />,
+          header: () => <JobsHeader />,
         }}
       />
     </Stack>

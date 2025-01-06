@@ -7,14 +7,6 @@ export default function StackLayout() {
   return (
     <Stack>
       <Stack.Screen name="home" options={{ header: () => <HomeHeader /> }} />
-      <Stack.Screen
-        name="messages"
-        options={{ header: () => <MessagesHeader /> }}
-      />
-      <Stack.Screen
-        name="profile"
-        options={{ header: () => <ProfileVisitHeader /> }}
-      />
     </Stack>
   );
 }

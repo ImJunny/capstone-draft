@@ -1,12 +1,14 @@
 import { ScrollView, StyleSheet, View, Text } from "react-native";
 import ImageBackgroundPlaceholder from "../ui/ImageBackgroundPlaceholder";
 import ImagePlaceholder from "../ui/ImagePlaceholder";
+import Badge from "../ui/Badge";
 
 export type TypePost = {
   id: number;
   title: string;
   description: string;
   rate: number;
+  tags: string[];
 };
 
 type ExploreSuggestionsProps = {
@@ -33,13 +35,17 @@ export default function ExploreJobSuggestions({
                 i < data.length - 1 && styles.borderBetween,
               ]}
             >
-              <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              <Text style={{ fontSize: 16, fontFamily: "GeistSemibold" }}>
                 {suggestion.title}
               </Text>
-              <Text style={{ fontSize: 16 }}>{suggestion.description}</Text>
-              <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-                ${suggestion.rate}
-              </Text>
+              <View style={{ marginVertical: 4, flexDirection: "row" }}>
+                {suggestion.tags.map((tag, i) => (
+                  <Badge key={`tag-${i}`} style={{ marginRight: 4 }}>
+                    {tag}
+                  </Badge>
+                ))}
+              </View>
+              <Text style={{ fontSize: 16 }}>${suggestion.rate}</Text>
             </View>
           </View>
         ))}

@@ -7,6 +7,7 @@ type ImagePlaceholderProps = {
 export default function ImagePlaceholder({
   width,
   height,
+  style,
   ...props
 }: ImagePlaceholderProps) {
   return (
@@ -14,7 +15,7 @@ export default function ImagePlaceholder({
       source={{
         uri: `https://picsum.photos/${width}/${height}?random=${Math.random()}`,
       }}
-      style={{ width: width, height: height }}
+      style={[{ width: width, height: height }, style]}
       {...props}
     />
   );
