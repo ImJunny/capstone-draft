@@ -2,27 +2,25 @@ import { TouchableOpacity, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import HeaderWrapper from "../ui/HeaderWrapper";
 import Text from "../ui/Text";
-import { Link, router } from "expo-router";
+import { router } from "expo-router";
 
-export default function ProfileHeader() {
+export default function ProfileVisitHeader() {
   return (
-    <HeaderWrapper
-      style={{ flexDirection: "row", justifyContent: "space-between" }}
-    >
+    <HeaderWrapper style={{ flexDirection: "row" }}>
+      <TouchableOpacity onPress={() => router.back()}>
+        <View>
+          <Ionicons name="chevron-back" size={28} />
+        </View>
+      </TouchableOpacity>
       <Text
         style={{
           fontFamily: "GeistSemibold",
           fontSize: 18,
+          marginLeft: 12,
         }}
       >
         @johnn005
       </Text>
-
-      <Link href={"/home"} asChild>
-        <TouchableOpacity>
-          <Ionicons name="menu" size={28} />
-        </TouchableOpacity>
-      </Link>
     </HeaderWrapper>
   );
 }

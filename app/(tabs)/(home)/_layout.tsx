@@ -1,9 +1,9 @@
 import MessagesHeader from "@/components/messages/MessagesHeader";
 import HomeHeader from "@/components/home/HomeHeader";
-import ProfileHeader from "@/components/profile/ProfileHeader";
 import { Stack } from "expo-router";
+import ProfileVisitHeader from "@/components/profile/ProfileVisitHeader";
 
-export default function StackLayout({ segment }: { segment: any }) {
+export default function StackLayout() {
   return (
     <Stack>
       <Stack.Screen name="home" options={{ header: () => <HomeHeader /> }} />
@@ -13,7 +13,7 @@ export default function StackLayout({ segment }: { segment: any }) {
       />
       <Stack.Screen
         name="profile"
-        options={{ header: () => <ProfileHeader segment={segment} /> }}
+        options={{ header: () => <ProfileVisitHeader /> }}
       />
     </Stack>
   );

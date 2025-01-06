@@ -1,9 +1,9 @@
 import MessagestHeader from "@/components/messages/MessagesHeader";
 import ExploreHeader from "@/components/explore/ExploreHeader";
-import ProfileHeader from "@/components/profile/ProfileHeader";
 import { Stack } from "expo-router";
+import ProfileVisitHeader from "@/components/profile/ProfileVisitHeader";
 
-export default function StackLayout({ segment }: { segment: any }) {
+export default function StackLayout() {
   return (
     <Stack>
       <Stack.Screen
@@ -16,7 +16,7 @@ export default function StackLayout({ segment }: { segment: any }) {
       />
       <Stack.Screen
         name="profile"
-        options={{ header: () => <ProfileHeader segment={segment} /> }}
+        options={{ header: () => <ProfileVisitHeader /> }}
       />
     </Stack>
   );
