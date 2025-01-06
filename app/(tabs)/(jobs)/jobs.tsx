@@ -1,7 +1,12 @@
-import Text from "@/components/ui/Text";
-import JobsPage from "@/components/pages/JobsPage";
-import { View } from "react-native";
+import JobsHeader from "@/components/jobs/JobsHeader";
+import JobsPage from "@/components/jobs/JobsPage";
+import React from "react";
 
-export default function HomeScreen() {
-  return <JobsPage />;
+export default function JobsScreen() {
+  return (
+    <>
+      <JobsHeader />
+      <JobsPage />
+    </>
+  );
 }

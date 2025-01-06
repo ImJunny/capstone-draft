@@ -7,7 +7,7 @@ export type TypePost = {
   id: number;
   title: string;
   description: string;
-  rate: number;
+  rate: string;
   tags: string[];
 };
 
@@ -38,14 +38,29 @@ export default function ExploreJobSuggestions({
               <Text style={{ fontSize: 16, fontFamily: "GeistSemibold" }}>
                 {suggestion.title}
               </Text>
-              <View style={{ marginVertical: 4, flexDirection: "row" }}>
+              <View
+                style={{
+                  marginTop: 8,
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                }}
+              >
+                <Badge
+                  style={{
+                    marginRight: 4,
+                  }}
+                >
+                  {suggestion.rate}
+                </Badge>
                 {suggestion.tags.map((tag, i) => (
-                  <Badge key={`tag-${i}`} style={{ marginRight: 4 }}>
+                  <Badge
+                    key={`tag-${i}`}
+                    style={{ marginRight: 4, marginTop: 4 }}
+                  >
                     {tag}
                   </Badge>
                 ))}
               </View>
-              <Text style={{ fontSize: 16 }}>${suggestion.rate}</Text>
             </View>
           </View>
         ))}

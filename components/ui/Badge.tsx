@@ -14,12 +14,6 @@ export default function Badge({
   textStyle,
   ...props
 }: BadgeProps) {
-  const randomColor: string =
-    "#" +
-    Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, "0");
-
   return (
     <View style={[styles.badgeContainer, style]} {...props}>
       <Text style={[styles.badgeText, textStyle]}>{children}</Text>
@@ -29,7 +23,7 @@ export default function Badge({
 
 const styles = StyleSheet.create({
   badgeContainer: {
-    backgroundColor: "black",
+    backgroundColor: "#ededed",
     paddingVertical: 2,
     paddingHorizontal: 10,
     borderRadius: 24,
@@ -39,7 +33,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
   },
   badgeText: {
-    color: "white",
+    color: "black",
     fontSize: 14,
     fontFamily: "GeistSemibold",
   },

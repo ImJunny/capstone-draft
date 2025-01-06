@@ -1,19 +1,49 @@
-import HeaderWrapper from "@/components/ui/HeaderWrapper";
-import Text from "@/components/ui/Text";
-import HomeHeader from "@/components/home/HomeHeader";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { Link, Stack } from "expo-router";
-import JobsHeader from "@/components/jobs/JobsHeader";
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+  StackNavigationOptions,
+} from "@react-navigation/stack";
+import { Easing } from "react-native-reanimated";
+import JobsScreen from "./jobs";
+import MessagesScreen from "./messages";
+import ProfileVisitScreen from "./profileVisit";
+
+const Stack = createStackNavigator();
+
+const customSlideAnimation: StackNavigationOptions = {
+  transitionSpec: {
+    open: {
+      animation: "timing",
+      config: {
+        duration: 250,
+        easing: Easing.inOut(Easing.ease),
+      },
+    },
+    close: {
+      animation: "timing",
+      config: {
+        duration: 250,
+        easing: Easing.inOut(Easing.ease),
+      },
+    },
+  },
+  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+};
 
 export default function StackLayout() {
   return (
-    <Stack screenOptions={{ animation: "slide_from_right" }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="jobs" component={JobsScreen} />
       <Stack.Screen
-        name="jobs"
-        options={{
-          header: () => <JobsHeader />,
-        }}
+        name="messages"
+        component={MessagesScreen}
+        options={customSlideAnimation}
       />
-    </Stack>
+      <Stack.Screen
+        name="profileVisit"
+        component={ProfileVisitScreen}
+        options={customSlideAnimation}
+      />
+    </Stack.Navigator>
   );
 }

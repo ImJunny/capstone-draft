@@ -1,7 +1,6 @@
-import HomePost, { TypePost } from "@/components/home/HomePost";
-import { Link } from "expo-router";
-import { Dimensions, FlatList, StatusBar, View } from "react-native";
-import { jobSuggestions } from "../pages/ExplorePage";
+import HomePost from "@/components/home/HomePost";
+import { FlatList, View } from "react-native";
+import { jobSuggestions } from "../explore/ExplorePage";
 
 export default function HomePage() {
   const posts = jobSuggestions;

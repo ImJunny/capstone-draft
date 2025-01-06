@@ -1,23 +1,11 @@
-import MessagestHeader from "@/components/messages/MessagesHeader";
-import ExploreHeader from "@/components/explore/ExploreHeader";
 import { Stack } from "expo-router";
-import ProfileVisitHeader from "@/components/profile/ProfileVisitHeader";
 
 export default function StackLayout() {
   return (
-    <Stack>
-      <Stack.Screen
-        name="explore"
-        options={{ header: () => <ExploreHeader /> }}
-      />
-      <Stack.Screen
-        name="messages"
-        options={{ header: () => <MessagestHeader /> }}
-      />
-      <Stack.Screen
-        name="profile"
-        options={{ header: () => <ProfileVisitHeader /> }}
-      />
+    <Stack screenOptions={{ headerShown: false, animation: "none" }}>
+      <Stack.Screen name="explore" />
+      <Stack.Screen name="profile" />
+      <Stack.Screen name="searchOutput" options={{ animation: "fade" }} />
     </Stack>
   );
 }

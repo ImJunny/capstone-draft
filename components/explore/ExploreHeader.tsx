@@ -1,4 +1,11 @@
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  TextInput,
+  Touchable,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import HeaderWrapper from "../ui/HeaderWrapper";
 import { Link } from "expo-router";
@@ -6,17 +13,9 @@ import { Link } from "expo-router";
 export default function ExploreHeader() {
   return (
     <HeaderWrapper>
-      <TextInput
-        style={styles.searchBar}
-        placeholder="Search for a job..."
-      ></TextInput>
-      <Link href="/messages" asChild>
-        <TouchableOpacity>
-          <Ionicons
-            name="chatbox-ellipses-outline"
-            size={28}
-            style={{ marginLeft: 12 }}
-          />
+      <Link href="/search" asChild>
+        <TouchableOpacity style={styles.searchBar} activeOpacity={0.5}>
+          <TextInput placeholder="Search for a job..." editable={false} />
         </TouchableOpacity>
       </Link>
     </HeaderWrapper>

@@ -17,8 +17,7 @@ export default function ProfileHeader() {
       >
         @johnn005
       </Text>
-
-      <Link href={"/home"} asChild>
+      <Link href={"/profile"} asChild>
         <TouchableOpacity>
           <Ionicons name="menu" size={28} />
         </TouchableOpacity>

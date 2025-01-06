@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     width: 120,
     height: 120,
-    borderRadius: 4,
+    borderRadius: 8,
     marginRight: 8,
   },
   categoryImgOverlay: {
@@ -66,12 +66,14 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
+    padding: 12,
   },
   categoryName: {
     textAlign: "center",
     color: "white",
     position: "absolute",
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
+    flexWrap: "wrap",
   },
 });

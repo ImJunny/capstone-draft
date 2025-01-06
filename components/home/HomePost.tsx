@@ -45,11 +45,12 @@ export default function HomePost({ data }: HomePostProps) {
 const styles = StyleSheet.create({
   cardContainer: {
     backgroundColor: "white",
-    borderWidth: 1,
     borderRadius: 8,
     width: "100%",
     height: 500,
     overflow: "hidden",
+    borderColor: "lightgray",
+    borderWidth: 2,
   },
   cardImage: {
     flex: 1,
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
 
 const cardFooter = StyleSheet.create({
   container: {
-    backgroundColor: "lightgray",
+    backgroundColor: "#ededed",
     flexDirection: "row",
     padding: 12,
   },
