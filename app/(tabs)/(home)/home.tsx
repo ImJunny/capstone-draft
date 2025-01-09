@@ -6,7 +6,7 @@ export default function HomeScreen() {
   return (
     <>
       <HomeHeader />
-      {/* <HomePage /> */}
+      <HomePage />
     </>
   );
 }

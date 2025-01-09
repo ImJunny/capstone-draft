@@ -22,16 +22,17 @@ export const jobSuggestions: TypePost[] = [
   {
     id: 1,
     title: "Lawn Mowing",
-    description: "This is a description of the lawn mowing job.",
+    description:
+      "This is a description of the lawn mowing job. Here is some more random text to fill up some of the card. This will help visualize content for styling.",
     rate: "$80 - $100",
-    tags: ["yardwork", "local", "negotiable"],
+    tags: ["within 15 miles", "yardwork"],
   },
   {
     id: 2,
     title: "Paint a building meural",
     description: "This is a description of lorem ipsum.",
     rate: "$35",
-    tags: ["art", "local", "negotiable"],
+    tags: ["within 5 miles", "art"],
   },
   {
     id: 3,
@@ -45,14 +46,14 @@ export const jobSuggestions: TypePost[] = [
     title: "Lorem Ipsum",
     description: "This is a description of lorem ipsum.",
     rate: "$120 - $140",
-    tags: ["other", "remote", "non-negotiable"],
+    tags: ["remote", "other"],
   },
   {
     id: 5,
     title: "Lorem Ipsum",
     description: "This is a description of lorem ipsum.",
     rate: "$60",
-    tags: ["tech", "remote"],
+    tags: ["remote", "tech"],
   },
 ];
 

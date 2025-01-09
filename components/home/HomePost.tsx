@@ -2,8 +2,9 @@ import { View, StyleSheet, TouchableOpacity } from "react-native";
 import Text from "@/components/ui/Text";
 import ImagePlaceholder from "../ui/ImagePlaceholder";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
-export type TypePost = { id: number; title: string; description: string };
+import { router } from "expo-router";
+import { TypePost } from "../explore/ExploreJobSuggestions";
+import Badge from "../ui/Badge";
 
 type HomePostProps = {
   data: TypePost;
@@ -13,28 +14,83 @@ export default function HomePost({ data }: HomePostProps) {
   return (
     <View style={styles.cardContainer}>
       <ImagePlaceholder width={600} height={600} style={styles.cardImage} />
+      {/* <View
+        style={{
+          backgroundColor: "white",
+          padding: 12,
+          borderRadius: 40,
+          position: "absolute",
+          right: 16,
+          top: 16,
+        }}
+      >
+        <TouchableOpacity>
+          <Ionicons name="bookmark-outline" size={28} />
+        </TouchableOpacity>
+      </View> */}
+
       <View style={styles.cardInfoContainer}>
         <View style={styles.cardInfoTextContainer}>
-          <Text style={{ fontSize: 22, fontFamily: "GeistSemibold" }}>
+          <Text style={{ fontSize: 18, fontFamily: "GeistSemibold" }}>
             {data.title}
           </Text>
-          <Text style={{ fontSize: 16 }}>{data.description}</Text>
+
+          <View
+            style={{
+              marginTop: 8,
+              flexDirection: "row",
+              flexWrap: "wrap",
+            }}
+          >
+            <Badge
+              style={{
+                marginRight: 4,
+              }}
+            >
+              {data.rate}
+            </Badge>
+            {data.tags.map((tag, i) => (
+              <Badge key={`tag-${i}`} style={{ marginRight: 4, marginTop: 4 }}>
+                {tag}
+              </Badge>
+            ))}
+          </View>
+
+          <Text
+            style={{ fontSize: 16, marginTop: 8 }}
+            numberOfLines={2}
+            ellipsizeMode={"tail"}
+          >
+            {data.description}
+          </Text>
         </View>
         <View style={cardFooter.container}>
           <ImagePlaceholder
-            width={56}
-            height={56}
+            width={48}
+            height={48}
             style={cardFooter.userAvatar}
           />
           <View style={cardFooter.textContainer}>
-            <Text style={{ fontSize: 16 }}>John Smith</Text>
+            <Text style={{ fontSize: 16, fontFamily: "GeistSemibold" }}>
+              John Smith
+            </Text>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Ionicons name="star-outline" size={14} />
               <Text style={{ fontSize: 16, marginLeft: 6 }}>4.5/5</Text>
             </View>
           </View>
-          <TouchableOpacity style={cardFooter.button}>
-            <Text style={{ color: "white", fontSize: 16 }}>Accept</Text>
+          <TouchableOpacity style={{ marginRight: 20 }}>
+            <Ionicons name="bookmark-outline" size={28} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={cardFooter.button}
+            onPress={() => router.push(`/post/${data.id}`)}
+          >
+            <Text
+              style={{ color: "white", fontSize: 16, fontFamily: "GeistBold" }}
+            >
+              View
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -47,25 +103,33 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 8,
     width: "100%",
-    height: 500,
+    height: 480,
     overflow: "hidden",
     borderColor: "lightgray",
     borderWidth: 2,
+    //remove this later
+    marginVertical: 100,
   },
   cardImage: {
-    flex: 1,
+    flex: 6,
   },
   cardInfoContainer: {
-    flex: 1,
+    flex: 7,
   },
-  cardInfoTextContainer: { padding: 20, marginBottom: "auto" },
+  cardInfoTextContainer: {
+    padding: 16,
+    marginBottom: "auto",
+    flexShrink: 1,
+  },
 });
 
 const cardFooter = StyleSheet.create({
   container: {
     backgroundColor: "#ededed",
     flexDirection: "row",
-    padding: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    alignItems: "center",
   },
   userAvatar: {
     borderRadius: 100,
@@ -73,13 +137,17 @@ const cardFooter = StyleSheet.create({
   },
   userName: {},
   userRating: {},
-  textContainer: { justifyContent: "space-between", marginVertical: 8 },
+  textContainer: {
+    justifyContent: "space-between",
+    marginVertical: 8,
+    marginRight: "auto",
+  },
   button: {
     backgroundColor: "black",
     borderRadius: 8,
     marginVertical: 8,
-    marginLeft: "auto",
     paddingHorizontal: 20,
+    paddingVertical: 12,
     alignContent: "center",
     justifyContent: "center",
   },

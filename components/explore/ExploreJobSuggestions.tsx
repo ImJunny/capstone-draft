@@ -1,7 +1,7 @@
-import { ScrollView, StyleSheet, View, Text } from "react-native";
-import ImageBackgroundPlaceholder from "../ui/ImageBackgroundPlaceholder";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import ImagePlaceholder from "../ui/ImagePlaceholder";
 import Badge from "../ui/Badge";
+import { router } from "expo-router";
 
 export type TypePost = {
   id: number;
@@ -23,12 +23,18 @@ export default function ExploreJobSuggestions({
       <Text style={styles.suggestionsTitle}>Job Suggestions</Text>
       <View style={styles.suggestionsWrapper}>
         {data.map((suggestion, i) => (
-          <View style={styles.suggestionContainer} key={`job-${i}`}>
+          <TouchableOpacity
+            style={styles.suggestionContainer}
+            key={`job-${i}`}
+            onPress={() => router.push(`./post/${suggestion.id}`)}
+            activeOpacity={1}
+          >
             <ImagePlaceholder
               width={100}
               height={100}
               style={styles.suggestionImg}
             />
+
             <View
               style={[
                 styles.suggestionTextContainer,
@@ -62,7 +68,7 @@ export default function ExploreJobSuggestions({
                 ))}
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
     </View>

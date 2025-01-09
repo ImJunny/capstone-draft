@@ -10,7 +10,7 @@ type TextProps = {
 
 export default function Text({ children, style, ...props }: TextProps) {
   return (
-    <ReactNativeText style={[{ fontFamily: "Geist" }, style]} {...props}>
+    <ReactNativeText style={[{ fontFamily: "GeistRegular" }, style]} {...props}>
       {children}
     </ReactNativeText>
   );

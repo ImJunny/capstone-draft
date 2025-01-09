@@ -10,10 +10,11 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded] = useFonts({
-    Geist: require("../assets/fonts/Geist-Regular.ttf"),
+    GeistRegular: require("../assets/fonts/Geist-Regular.ttf"),
     GeistBold: require("../assets/fonts/Geist-Bold.ttf"),
     GeistExtraBold: require("../assets/fonts/Geist-ExtraBold.ttf"),
     GeistSemibold: require("../assets/fonts/Geist-SemiBold.ttf"),
+    LexendExtraBold: require("../assets/fonts/Lexend-ExtraBold.ttf"),
   });
 
   useEffect(() => {

@@ -9,7 +9,7 @@ export default function HomeHeader() {
     <HeaderWrapper style={{ flexDirection: "row" }}>
       <Text
         style={{
-          fontFamily: "GeistExtraBold",
+          fontFamily: "LexendExtraBold",
           fontSize: 24,
           justifyContent: "space-between",
           flex: 1,
